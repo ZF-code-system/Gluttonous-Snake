@@ -14,8 +14,3 @@
 
 开发使用的环境是Visual Studio 2022
 
-### 游戏界面
-
-**<font color ="red">菜单界面</font>**
-
-![Screenshot 2023-09-13 231830](D:\贪吃蛇\Gluttonous-Snake\pictures\Screenshot 2023-09-13 231830.png)
