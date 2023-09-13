@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-	printBorder();
+	printMenu();
 	system("pause");
 	return 0;
 }
