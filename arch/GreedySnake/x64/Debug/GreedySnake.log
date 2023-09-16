@@ -1,4 +1,2 @@
 ﻿  menu.cpp
-D:\贪吃蛇\Gluttonous-Snake\arch\GreedySnake\menu.h(1,1): warning C4828: 文件包含在偏移 0x143 处开始的字符，该字符在当前源字符集中无效(代码页 936)。
-D:\贪吃蛇\Gluttonous-Snake\arch\GreedySnake\menu.cpp(91,2): warning C4060: switch 语句没有包含“case”或“default”标签
   GreedySnake.vcxproj -> D:\贪吃蛇\Gluttonous-Snake\arch\GreedySnake\x64\Debug\GreedySnake.exe
