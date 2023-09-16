@@ -6,12 +6,11 @@
 /*
 	菜单中所包含的变量
 */
-const int H = 30;         //游戏窗口的宽
-const int L = 70;           //游戏窗口的长
+
+
 const char Border = '#';           //边界的样式
 char map_Border[H][L];             //存储地图边界
 char key;               //用户输入
-//int userChoose = 0;     //用户当前选择开始游戏 
 
 /*
 	打印一个边框

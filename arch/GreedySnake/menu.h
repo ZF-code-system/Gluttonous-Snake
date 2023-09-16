@@ -1,5 +1,6 @@
 #pragma once
-
+constexpr auto H = 30;       //游戏窗口高度
+constexpr auto L = 70;      //游戏窗口长度
 extern char key;           //用户输入
 //extern int userChoose;     //用户当前选择开始游戏 
 
