@@ -1,4 +1,5 @@
 #include "menu.h"
+#include "game.h"
 #include <stdio.h>
 #include<conio.h>
 #include<Windows.h>
@@ -10,7 +11,7 @@ const int L = 70;           //游戏窗口的长
 const char Border = '#';           //边界的样式
 char map_Border[H][L];             //存储地图边界
 char key;               //用户输入
-int userChoose = 0;     //用户当前选择开始游戏 
+//int userChoose = 0;     //用户当前选择开始游戏 
 
 /*
 	打印一个边框
@@ -37,7 +38,7 @@ static void printBorder()
 void printMenu()
 {
 	printBorder();
-	userChoose = 0;      //用户当前选择
+	int userChoose = 0;      //用户当前选择
 	while (1) {
 		gotoXY(57, 7);
 		printf("贪吃蛇");
@@ -59,7 +60,8 @@ void printMenu()
 		setPrintcolor(0x0f);
 
 		key = _getch();         //从键盘上获取用户输入
-		userInput(key);
+		userInput(key,&userChoose);
+		//system("pause");
 	}
 }
 
@@ -83,44 +85,48 @@ void setPrintcolor(int color)
 /*
 	获取用户键盘输入
 */
-static void userInput(char input)
+static void userInput(char input, int* userChoose)
 {
 	switch (input) {
 	case 'W':
 	case 'w':
-		userChoose -= 1;
-		if (userChoose == -1)userChoose = 3;
+		(*userChoose) -= 1;
+		if (*userChoose == -1) *userChoose = 3;
 		break;
 	case 'S':
 	case 's':
-		userChoose = (userChoose + 1) % 4;
+		(*userChoose) = (*userChoose + 1) % 4;
 		break;
 	case '\r':
-		clear(26,2,68,28);
-		switch (userChoose) {
-		case '0':
-			//clear(26, 2, 68, 28);
-			//gameview();         //开始游戏
+		clear(26, 2, 68, 28);
+		switch (*userChoose) {
+		case 0:
+			// Start game
+			clear(26, 2, 68, 28);
+			gameView();         //开始游戏界面
 			system("pause");
 			break;
-		case '1':
+		case 1:
 			clear(26, 2, 68, 28);
-			//setting();          //设置游戏音效
-		case '2':
+			// Setting
+			// setting();
+			system("pause");
+			break;
+		case 2:
 			clear(26, 2, 68, 28);
-			//showRank();         //历史排行榜
-		case '3':
+			// Show rank
+			// showRank();
+			system("pause");
+			break;
+		case 3:
 			clear(26, 2, 68, 28);
 			gotoXY(26, 2);
-			printf("\t感谢您的使用");
-			system("pause");
-			break;
+			printf("\t\t\t\t感谢您的使用!!!");
+			exit(0);
 		}
-		break;
-	default:
-		break;
 	}
 }
+
 
 /*
 	清理指定矩形区域从（x，y）到（x+w，y+h）
